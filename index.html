@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights</title>
+    <link rel="stylesheet" href="terminalStyle.css" />
+    <link rel="stylesheet" href="movementBar.css" />
+    <link rel="stylesheet" href="backgroundStyling.css" />
+</head>
+
+<body>
+    <div id="counter">
+        <div id="counterTop"></div>
+    </div>
+    <div id="computer">
+        <div class="computerMonitor">
+            <div class="screen">
+                <center>
+                    <div class="loading-bar"></div>
+                    <h1>
+                        <a href="#orders" tabindex="0">Orders</a>
+                        <a href="#employees" tabindex="0">Employees</a>
+                    </h1>
+                </center>
+                <div id="dataContainer">
+                    <div id="DataItems">
+                        <ul>
+                            <a id="startOrder" onmouseover="hoverHints(this)" onclick="startOrder()">
+                                <li>
+                                    <span>New Order</span>
+                                </li>
+                            </a>
+                            <a id="endOrder" onmouseover="hoverHints(this)" onclick="endOrder()">
+                                <li>
+                                    <span>Cash Out</span>
+                                </li>
+                            </a>
+                            <a id="reboot" onmouseover="hoverHints(this)" onclick="turnScreenOn()">
+                                <li>
+                                    <span>Reboot</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div id="DataAddInfo">
+                        <p id="hintBlock"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="powerButton" onclick="turnScreenOff()"><img src="powerIcon.svg" /></div>
+        </div>
+        <div class="computerMonitorStand">
+            <div class="computerMoniterStandFoot"></div>
+        </div>
+    </div>
+
+    <div class="movementBar horizontalMovement rightMovement">
+        <span>>></span>
+    </div>
+    <script src="terminalScript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+#counter {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    background-image: url(wood.png);
+    left: 0;
+    bottom: 0;
+    background-position: bottom;
+}

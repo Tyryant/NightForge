@@ -1,0 +1,241 @@
+body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background-image: url(restaurantWindow.jpg);
+    object-fit: cover;
+    width: 100%;
+}
+
+p,
+h1 {
+    margin: 10px 0;
+}
+
+#computer {
+    width: 850px;
+    position: absolute;
+    bottom: 120px;
+}
+
+.computerMonitor {
+    background-color: #000;
+    width: 650px;
+    height: 500px;
+    margin: 20px auto 0;
+    border: 75px solid #928a7b;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: #222 0px 12px 20px 8px;
+    z-index: 4;
+}
+
+.computerMonitorStand {
+    position: relative;
+    width: 360px;
+    height: 0px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-top: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #928a7b;
+    z-index: 3;
+}
+
+.computerMoniterStandFoot {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    background-color: #928a7b;
+    border-radius: 50%;
+    margin-left: -20px;
+    box-shadow: #222 2px 5px 5px 2px;
+    z-index: 2;
+}
+
+.computerMonitor::after {
+    content: '';
+    position: absolute;
+    bottom: -35px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+}
+
+.computerMonitor.turnOn::after {
+    background-color: #ff0000;
+}
+
+.screen {
+    background-color: #000;
+    box-shadow: 0 0 5vmin 1vmin #000 inset;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    width: 600px;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.turnOn .screen {
+    background-image: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.1), transparent 70%);
+    background-image: radial-gradient(#444, #111);
+}
+
+.screen::before {
+    animation: wave 10s infinite ease-in-out;
+    content: "";
+    height: 20vh;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 0;
+}
+
+.screen.noAnimation::before {
+    animation: none;
+}
+
+.screen::after {
+    background-image: linear-gradient(transparent, transparent 3px, #222);
+    background-size: 4px 4px;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+h1,
+li,
+a,
+p {
+    animation: colorPulse 5s infinite ease-in-out;
+}
+
+p:last-child::after {
+    animation: blink 1s infinite;
+    content: "_";
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    color: #0c0;
+    border: #0c0 solid 3px;
+    padding: 10px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+a:hover span::before {
+    content: ">";
+}
+
+#dataContainer {
+    padding: 10px 60px;
+}
+
+#DataItems {
+    display: block;
+    overflow: auto;
+    max-height: 60%;
+}
+
+#DataAddInfo {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0%;
+}
+
+#powerButton {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: -45px;
+    right: -40px;
+    background-color: #757065;
+    border: solid 2px #111;
+    border-radius: 50px;
+    text-align: center;
+}
+
+#powerButton img {
+    width: 11px;
+    height: 11px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+::-webkit-scrollbar {
+    width: 20px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0c0;
+    border-radius: 10px;
+}
+
+@keyframes colorPulse {
+
+    0%,
+    100% {
+        color: #0c0;
+        border-color: #0c0;
+    }
+
+    48%,
+    52% {
+        color: #090;
+        border-color: #090;
+    }
+
+    50% {
+        color: #060;
+        border-color: #060;
+    }
+}
+
+@keyframes wave {
+    0% {
+        box-shadow: 0 -10vh 20vh #0c0;
+        top: -100vh;
+    }
+
+    48%,
+    52% {
+        box-shadow: 0 -10vh 20vh #090;
+    }
+
+    50% {
+        box-shadow: 0 -10vh 20vh #060;
+    }
+
+    100% {
+        box-shadow: 0 -10vh 20vh #0c0;
+        top: 200vh;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
