@@ -1,0 +1,5 @@
+name: Publish Website to Cpanel
+on:
+  push:
+    branches:
+      - main
