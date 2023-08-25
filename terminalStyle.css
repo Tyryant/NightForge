@@ -3,7 +3,6 @@ body {
     margin: 0;
     overflow: hidden;
     padding: 0;
-    background-image: url(restaurantWindow.jpg);
     object-fit: cover;
     width: 100%;
 }
@@ -77,11 +76,14 @@ h1 {
     box-sizing: border-box;
     font-family: 'VT323', monospace;
     font-size: 30px;
-    width: 600px;
-    height: 450px;
     overflow: hidden;
     position: relative;
     margin: auto;
+}
+
+.screenSize {
+    width: 600px;
+    height: 450px;
 }
 
 .turnOn .screen {
@@ -191,51 +193,4 @@ a:hover span::before {
 ::-webkit-scrollbar-thumb {
     background: #0c0;
     border-radius: 10px;
-}
-
-@keyframes colorPulse {
-
-    0%,
-    100% {
-        color: #0c0;
-        border-color: #0c0;
-    }
-
-    48%,
-    52% {
-        color: #090;
-        border-color: #090;
-    }
-
-    50% {
-        color: #060;
-        border-color: #060;
-    }
-}
-
-@keyframes wave {
-    0% {
-        box-shadow: 0 -10vh 20vh #0c0;
-        top: -100vh;
-    }
-
-    48%,
-    52% {
-        box-shadow: 0 -10vh 20vh #090;
-    }
-
-    50% {
-        box-shadow: 0 -10vh 20vh #060;
-    }
-
-    100% {
-        box-shadow: 0 -10vh 20vh #0c0;
-        top: 200vh;
-    }
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
 }

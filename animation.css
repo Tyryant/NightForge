@@ -1,0 +1,55 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes colorPulse {
+
+    0%,
+    100% {
+        color: #0c0;
+        border-color: #0c0;
+    }
+
+    48%,
+    52% {
+        color: #090;
+        border-color: #090;
+    }
+
+    50% {
+        color: #060;
+        border-color: #060;
+    }
+}
+
+@keyframes wave {
+    0% {
+        box-shadow: 0 -10vh 20vh #0c0;
+        top: -100vh;
+    }
+
+    48%,
+    52% {
+        box-shadow: 0 -10vh 20vh #090;
+    }
+
+    50% {
+        box-shadow: 0 -10vh 20vh #060;
+    }
+
+    100% {
+        box-shadow: 0 -10vh 20vh #0c0;
+        top: 200vh;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
