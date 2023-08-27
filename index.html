@@ -15,56 +15,11 @@
 </head>
 
 <body>
-    <div id="counter">
-        <div id="counterTop"></div>
-    </div>
-    <div id="computer">
-        <div class="computerMonitor">
-            <div class="screen">
-                <center>
-                    <div class="loading-bar"></div>
-                    <h1>
-                        <a href="#orders" tabindex="0">Orders</a>
-                        <a href="#employees" tabindex="0">Employees</a>
-                    </h1>
-                </center>
-                <div id="dataContainer">
-                    <div id="DataItems">
-                        <ul>
-                            <a id="startOrder" onmouseover="hoverHints(this)" onclick="startOrder()">
-                                <li>
-                                    <span>New Order</span>
-                                </li>
-                            </a>
-                            <a id="endOrder" onmouseover="hoverHints(this)" onclick="endOrder()">
-                                <li>
-                                    <span>Cash Out</span>
-                                </li>
-                            </a>
-                            <a id="reboot" onmouseover="hoverHints(this)" onclick="turnScreenOn()">
-                                <li>
-                                    <span>Reboot</span>
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                    <div id="DataAddInfo">
-                        <p id="hintBlock"></p>
-                    </div>
-                </div>
-            </div>
-            <div id="powerButton" onclick="turnScreenOff()"><img src="powerIcon.svg" /></div>
+    <a href="terminal.html">
+        <div>
+            <p>Play Game</p>
         </div>
-        <div class="computerMonitorStand">
-            <div class="computerMoniterStandFoot"></div>
-        </div>
-    </div>
-
-        <a id="nextPageButton" href="camera.html">
-            <div class="movementBar horizontalMovement rightMovement">
-                <span>>></span>
-            </div>
-        </a>
+    </a>
     <script src="terminalScript.js"></script>
 </body>
 
