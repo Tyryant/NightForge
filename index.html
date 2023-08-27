@@ -9,18 +9,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Five Nights</title>
-    <link rel="stylesheet" href="terminalStyle.css" />
-    <link rel="stylesheet" href="movementBar.css" />
-    <link rel="stylesheet" href="backgroundStyling.css" />
+    <style>
+        .screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease; /* Add a smooth transition */
+            display: none;
+        }
+
+        #screen1 {
+            background-color: #ffcccc;
+        }
+
+        #screen2 {
+            background-color: #ccffcc;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="screen" id="screen1">
+        <!-- Content of screen 1 -->
+        <button id="gotoScreen2">Go to Screen 2</button>
+    </div>
+
+    <div class="screen" id="screen2">
+        <!-- Content of screen 2 -->
+        <button id="gotoScreen1">Go to Screen 1</button>
+    </div>
+
     <a href="terminal.html">
         <div>
             <p>Play Game</p>
         </div>
     </a>
-    <script src="terminalScript.js"></script>
+    <script src="mainScript.js"></script>
 </body>
 
 </html>
