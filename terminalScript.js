@@ -1,5 +1,5 @@
 const computerScreen = document.querySelector(".screen");
-const interval = 50;
+const interval = 1;
 const computerMonitor = document.querySelector(".computerMonitor");
 const tempStorage = computerScreen.innerHTML;
 const hintBlock = document.getElementById("hintBlock");
