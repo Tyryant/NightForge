@@ -19,6 +19,7 @@
 }
 .camButton {
     border: #0c0 solid 3px;
+    background-color: #000;
 }
 #cam01 {
     position: absolute;
