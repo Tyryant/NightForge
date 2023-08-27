@@ -1,6 +1,7 @@
+
+const screens = document.querySelectorAll(".screen");
+let currentScreenIndex = 0;
 document.addEventListener("DOMContentLoaded", function () {
-    const screens = document.querySelectorAll(".screen");
-    let currentScreenIndex = 0;
 
     document.getElementById("gotoScreen2").addEventListener("click", function () {
         screens[currentScreenIndex].style.transform = "translateX(-100%)"; // Slide out
