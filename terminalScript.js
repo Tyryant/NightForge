@@ -40,7 +40,7 @@ function turnScreenOn() {
     toggleMonitorLight();
     setTimeout(() => {
         generateText();
-    }, 600);
+    }, 50);
 }
 
 function turnScreenOff() {
