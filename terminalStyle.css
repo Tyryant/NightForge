@@ -16,6 +16,7 @@ h1 {
     width: 850px;
     position: absolute;
     bottom: 120px;
+    left: 5vw;
 }
 
 .computerMonitor {
@@ -70,7 +71,7 @@ h1 {
     background-color: #ff0000;
 }
 
-.screen {
+.computerScreen {
     background-color: #000;
     box-shadow: 0 0 5vmin 1vmin #000 inset;
     box-sizing: border-box;
@@ -81,17 +82,17 @@ h1 {
     margin: auto;
 }
 
-.screenSize {
+.computerScreenSize {
     width: 600px;
     height: 450px;
 }
 
-.turnOn .screen {
+.turnOn .computerScreen {
     background-image: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.1), transparent 70%);
     background-image: radial-gradient(#444, #111);
 }
 
-.screen::before {
+.computerScreen::before {
     animation: wave 10s infinite ease-in-out;
     content: "";
     height: 20vh;
@@ -103,11 +104,11 @@ h1 {
     top: 0;
 }
 
-.screen.noAnimation::before {
+.computerScreen.noAnimation::before {
     animation: none;
 }
 
-.screen::after {
+.computerScreen::after {
     background-image: linear-gradient(transparent, transparent 3px, #222);
     background-size: 4px 4px;
     bottom: 0;

@@ -1,4 +1,4 @@
-const computerScreen = document.querySelector(".screen");
+const computerScreen = document.querySelector(".computerScreen");
 const interval = 1;
 const computerMonitor = document.querySelector(".computerMonitor");
 const tempStorage = computerScreen.innerHTML;
