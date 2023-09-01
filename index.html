@@ -3,43 +3,101 @@
 
 <head>
     <meta charset="UTF-8">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-    </style>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Five Nights</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .screen-container {
+            display: flex;
+            width: 300%;
+            /* Three times the width to accommodate three screens */
+            transition: transform 0.5s ease-in-out;
+        }
+
         .screen {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease; /* Add a smooth transition */
-            display: none;
-        }
-
-        #screen1 {
-            background-color: #ffcccc;
-        }
-
-        #screen2 {
-            background-color: #ccffcc;
+            width: 100vw;
+            height: 100vh;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            background-color: #f0f0f0;
         }
     </style>
+    <title>Multi-Screen Example with Slide Animation</title>
+    <link rel="stylesheet" href="movementBar.css" />
 </head>
 
 <body>
-    <button onclick="location.href='terminal.html';">Play</button>
-    <div class="screen" id="screen1">
-        <!-- Content of screen 1 -->
-        <button id="gotoScreen2">Go to Screen 2</button>
+    <div class="screen-container" id="screenContainer">
+        <div class="screen">
+            Screen 1
+
+            <a id="nextPageButton" onmouseover="nextScreen()">
+                <div class="movementBar horizontalMovement rightMovement">
+                    <span>>></span>
+                </div>
+            </a>
+        </div>
+        <div class="screen">
+            <a id="lastPageButton" onmouseover="prevScreen()">
+                <div class="movementBar horizontalMovement leftMovement">
+                    <span>>></span>
+                </div>
+            </a>
+            Screen 2
+            
+            <a id="nextPageButton" onmouseover="nextScreen()">
+                <div class="movementBar horizontalMovement rightMovement">
+                    <span>>></span>
+                </div>
+            </a>
+        </div>
+        <div class="screen">
+            <a id="lastPageButton" onmouseover="prevScreen()">
+                <div class="movementBar horizontalMovement leftMovement">
+                    <span>>></span>
+                </div>
+            </a>
+            Screen 3
+            
+        </div>
     </div>
 
-    <div class="screen" id="screen2">
-        <!-- Content of screen 2 -->
-        <button id="gotoScreen1">Go to Screen 1</button>
-    </div>
-    <script src="mainScript.js"></script>
+    <script>
+        const screenContainer = document.getElementById('screenContainer');
+        const screens = document.querySelectorAll('.screen');
+        let currentScreenIndex = 0;
+
+        function showScreen(index) {
+            screenContainer.style.transform = `translateX(-${index * 100}vw)`;
+        }
+
+        function nextScreen() {
+            currentScreenIndex = (currentScreenIndex + 1) % screens.length;
+            showScreen(currentScreenIndex);
+        }
+
+        function prevScreen() {
+            currentScreenIndex = (currentScreenIndex - 1 + screens.length) % screens.length;
+            showScreen(currentScreenIndex);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextScreen();
+            } else if (event.key === 'ArrowLeft') {
+                prevScreen();
+            }
+        });
+
+        showScreen(currentScreenIndex);
+    </script>
 </body>
 
 </html>

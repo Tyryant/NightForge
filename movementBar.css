@@ -1,3 +1,7 @@
+.screen {
+    position: relative;
+}
+
 .movementBar {
     color: brown;
     border: solid rgb(126, 68, 3) 5px;
